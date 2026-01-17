@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import MainShell from "@/components/layout/MainShell";
 import { supabase } from "@/lib/supabaseClient";
 import confetti from "canvas-confetti";
-
+import toast, { Toaster } from "react-hot-toast"; // 1. Import toast
 // Helper component for the animated mascot
 const Mascot = ({ pongalMounted, pongalActive, pongalSettled }: { pongalMounted?: boolean; pongalActive?: boolean; pongalSettled?: boolean }) => (
   <div className="relative w-96 h-90 animate-bob flex items-center justify-center mb-0">
@@ -63,7 +63,7 @@ const Section = ({ title }: { title: string }) => (
 
 const RegistrationModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState("");
+  // Removed 'status' state as we don't need it anymore
   const [totalParticipants, setTotalParticipants] = useState("");
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
@@ -71,16 +71,15 @@ const RegistrationModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setStatus("");
 
     if (!formRef.current) {
-      setStatus("❌ Form error. Please try again.");
+      toast.error("❌ Form error. Please try again."); // 2. Use toast.error
       setLoading(false);
       return;
     }
 
     const formData = new FormData(formRef.current);
-    const payload = Object.fromEntries(formData.entries());
+    const payload: any = Object.fromEntries(formData.entries()); // Added type casting for easier manipulation
 
     // Remove p4 fields if total_participants is 3
     if (payload.total_participants === "3") {
@@ -100,7 +99,7 @@ const RegistrationModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
     );
 
     if (hasEmptyField) {
-      setStatus("❌ Please fill in all fields");
+      toast.error("❌ Please fill in all fields"); // 2. Use toast.error
       setLoading(false);
       return;
     }
@@ -111,23 +110,27 @@ const RegistrationModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
 
     if (error) {
       console.error(error);
-      setStatus("❌ Submission failed");
+      toast.error("❌ Submission failed: " + error.message); // 2. Use toast.error
     } else {
-      setStatus("✅ Registration successful!. Confirmation email will be sent shortly.");
+      // 3. Success Popup
+      toast.success("✅ Registration successful! Confirmation email sent.", {
+        duration: 4000, // Keep visible for 4 seconds
+      });
+
       if (formRef.current) {
         formRef.current.reset();
       }
       setTotalParticipants("");
       setAgreedToTerms(false);
+
+      // Close the modal after a short delay so they can read the toast
       setTimeout(() => {
         onClose();
-        setStatus("");
       }, 2000);
     }
 
     setLoading(false);
-  };
-
+    };
 
 
   if (!isOpen) return null;
@@ -1460,7 +1463,7 @@ export default function HomePage() {
 
   return (
     <MainShell enableScrollNav sectionRefs={sectionRefs}>
-
+     <Toaster position="bottom-right" />
       <RegistrationModal
         isOpen={isRegistrationModalOpen}
         onClose={() => setIsRegistrationModalOpen(false)}
