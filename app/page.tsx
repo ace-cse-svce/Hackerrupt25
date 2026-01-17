@@ -79,16 +79,18 @@ const Input = ({
   name,
   placeholder,
   type = "text",
+  required = true,
 }: {
   name: string;
   placeholder: string;
   type?: string;
+  required?: boolean;
 }) => (
   <input
     type={type}
     name={name}
     placeholder={placeholder}
-    required
+    required={required}
     className="w-full p-3 bg-black/60 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-400 transition-all"
   />
 );
@@ -275,22 +277,22 @@ const RegistrationModal = ({ isOpen, onClose, showToast }: { isOpen: boolean; on
             <>
               <Section title="Participant 4" />
               <div className="grid md:grid-cols-2 gap-4">
-                <Input name="p4_name" placeholder="Full Name" />
-                <Input name="p4_register_number" placeholder="Register Number" />
-                <Input name="p4_email" placeholder="Email" type="email" />
-                <Input name="p4_mobile_number" placeholder="Mobile Number" />
-                <Input name="p4_college_name" placeholder="College Name" />
+                <Input name="p4_name" placeholder="Full Name" required={totalParticipants === "4"} />
+                <Input name="p4_register_number" placeholder="Register Number" required={totalParticipants === "4"} />
+                <Input name="p4_email" placeholder="Email" type="email" required={totalParticipants === "4"} />
+                <Input name="p4_mobile_number" placeholder="Mobile Number" required={totalParticipants === "4"} />
+                <Input name="p4_college_name" placeholder="College Name" required={totalParticipants === "4"} />
                 <select
                   name="p4_degree"
-                  required
+                  required={totalParticipants === "4"}
                   className="w-full p-3 bg-black/60 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-400 transition-all"
                 >
                   <option value="">Degree</option>
                   <option value="B.E">B.E</option>
                   <option value="B.Tech">B.Tech</option>
                 </select>
-                <Input name="p4_branch" placeholder="Branch" />
-                <Input name="p4_year_of_study" placeholder="Year of Study" />
+                <Input name="p4_branch" placeholder="Branch" required={totalParticipants === "4"} />
+                <Input name="p4_year_of_study" placeholder="Year of Study" required={totalParticipants === "4"} />
               </div>
             </>
           )}
