@@ -25,7 +25,7 @@ const FAQSection = () => {
     {
       question: "Who can participate in  Hackerrupt '26?",
       answer:
-        "Hackerrupt '26 is open to all students, professionals, and tech enthusiasts. Whether you're a beginner or an expert, everyone is welcome to participate and contribute their unique skills to create innovative solutions.",
+        "Hackerrupt '26 is open to all engineering students, professionals, and tech enthusiasts. Whether you're a beginner or an expert, everyone is welcome to participate and contribute their unique skills to create innovative solutions.",
     },
     {
       question: "How many members can be in a team?",
@@ -50,7 +50,7 @@ const FAQSection = () => {
     {
       question: "What is the prize pool?",
       answer:
-        "Hackerrupt '26 offers a grand prize pool worth over ₹50,000, along with exclusive goodies, internship opportunities, and certificates for top-performing teams.",
+        "Hackerrupt '26 offers a grand prize pool worth over ₹1,00,000, consisting of exclusive goodies, internship opportunities, and certificates for top-performing teams.",
     },
   ]
 

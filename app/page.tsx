@@ -1204,7 +1204,7 @@ const TeamsSection = () => {
       },
       {
         name: "Kanisha S",
-        role: "Design Team Head",
+        role: "Design Team Member",
         image: "/kanisha.png",
 
       },
@@ -1372,24 +1372,45 @@ const SponsorsSection: React.FC = () => {
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-20">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="font-pixel text-3xl md:text-5xl mb-12 text-green-400 animate-slide-in-down">
-          Sponsors
+          Our Sponsors
         </h2>
+
+        {/* Sponsor Logos Section */}
+        <div className="mb-16">
+          {/* Title Sponsor */}
+          <div className="mb-12">
+            <h1 className="text-3xl font-bold text-yellow-400 mb-6">Title & Venue Sponsor</h1>
+            <div className="flex justify-center">
+              <img src="/logo1.svg" alt="Title Sponsor" className="h-22 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+            </div>
+          </div>
+          
+          {/* Other Sponsors */}{/*
+          <div>
+            <h1 className="text-2xl font-bold text-purple-400 mb-6">Other Sponsors</h1>
+            <div className="flex justify-center items-center gap-12">
+              <img src="/logo2.png" alt="Sponsor 2" className="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+              <img src="/logo3.png" alt="Sponsor 3" className="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+              <img src="/logo4.png" alt="Sponsor 4" className="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+            </div>
+          </div>*/}
+        </div>
 
         <div className="relative">
           {/* Decorative borders */}
           <div className="absolute inset-0 border-2 border-green-400/30 rounded-2xl transform rotate-1"></div>
           <div className="absolute inset-0 border-2 border-purple-400/20 rounded-2xl transform -rotate-1"></div>
 
-          <div className="relative bg-black/60 backdrop-blur-sm border border-gray-700 rounded-2xl p-16 hover:border-green-400 transition-all duration-500">
-            <div className="space-y-8">
-              <div className="text-6xl md:text-8xl animate-pulse">🚀</div>
+          <div className="relative bg-black/60 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 hover:border-green-400 transition-all duration-500">
+            <div className="space-y-4">
+              <div className="text-4xl md:text-6xl animate-pulse">🚀</div>
 
               {/* Changed heading */}
-              <h3 className="font-pixel text-2xl md:text-4xl text-purple-400 mb-4">
+              <h3 className="font-pixel text-xl md:text-3xl text-purple-400 mb-4">
                 Want to sponsor us … ?
               </h3>
 
-              <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-base text-gray-300 max-w-2xl mx-auto leading-relaxed">
                 We’re working with amazing sponsors to bring you the best hackathon
                 experience. Download our sponsorship brochure below!
               </p>
@@ -1399,7 +1420,7 @@ const SponsorsSection: React.FC = () => {
                 <a
                   href="/brochure.pdf" // put brochure.pdf inside /public folder
                   download="EWB_Sponsorship_Brochure.pdf" // optional custom filename
-                  className="inline-block bg-green-500 text-black font-semibold px-6 py-3 rounded-lg hover:bg-green-400 transition-colors duration-300"
+                  className="inline-block bg-green-500 text-black font-semibold px-4 py-2 rounded-lg hover:bg-green-400 transition-colors duration-300"
                 >
                   Download Brochure
                 </a>
