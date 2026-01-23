@@ -477,7 +477,7 @@ const TimerSection = ({ forwardRef }) => {
   });
 
   useEffect(() => {
-    const targetDate = new Date("January 24, 2026 00:00:00").getTime();
+    const targetDate = new Date("January 25, 2026 23:59:59").getTime();
     const interval = setInterval(() => {
       const now = new Date().getTime();
       const difference = targetDate - now;
@@ -552,7 +552,7 @@ const TimerSection = ({ forwardRef }) => {
         {/* Registration Closes Header */}
         <div className="mb-12">
           <h3 className="text-2xl md:text-4xl font-bold text-transparent bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text mb-4 animate-pulse">
-            ⏰ Registration Closes In
+            ⏰ Registration Extended till Jan 25, 2026!!
           </h3>
           <div className="w-32 h-1 bg-gradient-to-r from-red-400 to-yellow-400 mx-auto rounded-full"></div>
         </div>
