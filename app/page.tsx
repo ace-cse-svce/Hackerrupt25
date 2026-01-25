@@ -413,17 +413,16 @@ const HomeSection = ({ onRegisterClick, pongalMounted, pongalActive, pongalSettl
     {/* Buttons Container */}
     <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
       <button
-        onClick={onRegisterClick}
+        disabled
         className="group relative w-[85%] sm:w-auto mx-auto px-8 py-3 rounded-xl
       text-base sm:text-lg font-bold tracking-wide
-      text-white
-      bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600
-      shadow-lg shadow-purple-500/30
-      transition-all duration-300
-      hover:scale-105 hover:shadow-indigo-500/40
+      text-gray-400
+      bg-gray-600
+      shadow-lg
+      cursor-not-allowed
       overflow-hidden"
       >
-        Register Now
+        Registration Closed
       </button>
       <a
     href="/problem-statements"
@@ -439,34 +438,6 @@ const HomeSection = ({ onRegisterClick, pongalMounted, pongalActive, pongalSettl
     <span className="relative z-10">Problem Statements</span>
     <span className="absolute inset-0 bg-cyan-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
   </a>
-      <a
-        href="/Hackerrupt'26_ppt_template.pptx"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group relative w-[85%] sm:w-auto mx-auto px-8 py-3 rounded-xl
-      text-base sm:text-lg font-bold tracking-wide
-      text-white
-      bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600
-      shadow-lg shadow-purple-500/30
-      transition-all duration-300
-      hover:scale-105 hover:shadow-indigo-500/40
-      overflow-hidden">
-        Download PPT Template
-      </a>
-      <a
-        href="/Hackerrupt'26_Abstract_Template.docx"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group relative w-[85%] sm:w-auto mx-auto px-8 py-3 rounded-xl
-      text-base sm:text-lg font-bold tracking-wide
-      text-white
-      bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600
-      shadow-lg shadow-purple-500/30
-      transition-all duration-300
-      hover:scale-105 hover:shadow-indigo-500/40
-      overflow-hidden">
-        Download Abstract Template (Optional)
-      </a>
     </div>
     </div>
   </div>
@@ -552,8 +523,9 @@ const TimerSection = ({ forwardRef }) => {
         {/* Registration Closes Header */}
         <div className="mb-12">
           <h3 className="text-2xl md:text-4xl font-bold text-transparent bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text mb-4 animate-pulse">
-            ⏰ Registration Extended till Jan 25, 2026!!
+            Shortlisted teams will be announced on or before January 28, 2026
           </h3>
+         
           <div className="w-32 h-1 bg-gradient-to-r from-red-400 to-yellow-400 mx-auto rounded-full"></div>
         </div>
 
@@ -900,7 +872,7 @@ const TimelineSection = () => {
     {
       time: "12:00 AM",
       event: "Abstract Submission Closes",
-      day: "24 Jan 2026",
+      day: "26 Jan 2026",
       description: "Deadline for abstract PPT submission",
     },
     {
@@ -1385,15 +1357,15 @@ const SponsorsSection: React.FC = () => {
             </div>
           </div>
           
-          {/* Other Sponsors */}{/*
+          {/* Other Sponsors */}
           <div>
-            <h1 className="text-2xl font-bold text-purple-400 mb-6">Other Sponsors</h1>
+            <h1 className="text-3xl font-bold text-purple-400 mb-6">Other Sponsors</h1>
             <div className="flex justify-center items-center gap-12">
-              <img src="/logo2.png" alt="Sponsor 2" className="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-              <img src="/logo3.png" alt="Sponsor 3" className="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300" />
-              <img src="/logo4.png" alt="Sponsor 4" className="h-28 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+              <img src="/logo4.png" alt="Sponsor 2" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+              <img src="/logo3.webp" alt="Sponsor 3" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+              <img src="/logo2.png" alt="Sponsor 4" className="h-20 w-auto object-contain hover:scale-110 transition-transform duration-300" />
             </div>
-          </div>*/}
+          </div>
         </div>
 
         <div className="relative">
