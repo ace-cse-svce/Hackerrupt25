@@ -222,7 +222,7 @@ const isActive = (id: string) => {
 
       {/* HEADER — EXACT COPY */}
       <header className="fixed top-0 left-0 w-full z-50">
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-md border-b border-white/10 h-14 md:h-20"></div>
+        <div className="absolute inset-0 bg-black/20 backdrop-blur-md border-b border-white/10 h-14 md:h-20"></div>
 
         <div className="relative z-10 max-w-[1600px] mx-auto flex justify-between items-center h-14 md:h-20 px-4 sm:px-8">
           {/* Logos */}
@@ -234,7 +234,7 @@ const isActive = (id: string) => {
   <span className="text-[6.5px] sm:text-[8.5px] uppercase tracking-widest leading-tight">
     Title Sponsored By
   </span>
-  <img src="/codeworks.svg" className="h-3 md:h-8" />
+  <img src="/logo1.png" className="h-8 md:h-8 bg-white p-1 rounded" />
 </div>
 
           </div>

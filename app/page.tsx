@@ -438,6 +438,20 @@ const HomeSection = ({ onRegisterClick, pongalMounted, pongalActive, pongalSettl
     <span className="relative z-10">Problem Statements</span>
     <span className="absolute inset-0 bg-cyan-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
   </a>
+      <a
+    href="/results"
+    className="group relative w-[85%] sm:w-auto mx-auto px-8 py-3 rounded-xl
+      text-base sm:text-lg font-bold tracking-wide
+      text-white
+      bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600
+      shadow-lg shadow-green-500/30
+      transition-all duration-300
+      hover:scale-105 hover:shadow-emerald-500/40
+      overflow-hidden"
+  >
+    <span className="relative z-10">Shortlisted Teams</span>
+    <span className="absolute inset-0 bg-green-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+  </a>
     </div>
     </div>
   </div>
@@ -523,7 +537,7 @@ const TimerSection = ({ forwardRef }) => {
         {/* Registration Closes Header */}
         <div className="mb-12">
           <h3 className="text-2xl md:text-4xl font-bold text-transparent bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text mb-4 animate-pulse">
-            Shortlisted teams will be announced on or before January 28, 2026
+            Shortlisted teams Announced!! Check in "Shortlisted Teams" section
           </h3>
          
           <div className="w-32 h-1 bg-gradient-to-r from-red-400 to-yellow-400 mx-auto rounded-full"></div>
@@ -1353,7 +1367,7 @@ const SponsorsSection: React.FC = () => {
           <div className="mb-12">
             <h1 className="text-3xl font-bold text-yellow-400 mb-6">Title & Venue Sponsor</h1>
             <div className="flex justify-center">
-              <img src="/logo1.svg" alt="Title Sponsor" className="h-22 w-auto object-contain hover:scale-110 transition-transform duration-300" />
+              <img src="/logo1.png" alt="Title Sponsor" className="h-35 w-auto object-contain hover:scale-110 transition-transform duration-300" />
             </div>
           </div>
           
